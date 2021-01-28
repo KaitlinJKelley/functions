@@ -114,7 +114,7 @@ const number = 7
 const cubedNumber = bigify(number, cube)  // 343
 
 // Defining Chores
-const person = {
+const don = {
     firstName: "Donald",
     lastName: "McLelland"
 }
@@ -126,8 +126,10 @@ const washDog = person => `${person.firstName} ${person.lastName} washes the dog
 const laundry = person => `${person.firstName} ${person.lastName} does laundry`
 const clean = person => `${person.firstName} ${person.lastName} cleans`
 
-const dayPlanner = (chore, day) => {
-    return `${chore} on ${day}`
+const dayPlanner = (chore1, chore2, chore3, person, day) => {
+    return `On ${day}, ${chore1(person)}, and 
+    ${chore2(person)}, and
+    ${chore3(person)}`
 }
 
-console.log(dayPlanner(sweep(person), "Thursday"))
+console.log(dayPlanner(sweep, washDog, laundry, don, "Thursday"))
