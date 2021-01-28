@@ -33,6 +33,7 @@ const go = (direction, speed) => {
 }
 
 go("sideways", 83)
+go("up", 22)
 
 
 // Evens or Odds
@@ -77,5 +78,58 @@ console.log(join(filtered))
 
 
 // You Can Tune a Piano
+const catchFish = () => {
+    if (Math.random() * 3 < 1) {
+        console.log("Sven hooked a tuna!  :)")
+    } else {
+        console.log("Sven came up empty-handed.  :(")
+    }
+}
+catchFish()
 
 
+// Fast Food
+const orderMeal = (Sandwich, Side, Drink, Dessert) => {
+    return {
+        sandwich: Sandwich,
+        side: Side,
+        drink: Drink,
+        dessert: Dessert
+    }
+}
+
+const takeOutBag = orderMeal("Ultimate Slammer", "Potato wedges", "Mr. Pepper", "Fudge sundae")
+
+
+// Same Chores, Different Days
+// Lightning Exercise
+const bigify = (number, operationFunction) => {
+    const result = operationFunction(number)
+    return result
+}
+
+const cube = number => number * number * number
+
+const number = 7
+const cubedNumber = bigify(number, cube)  // 343
+
+// Defining Chores
+const don = {
+    firstName: "Donald",
+    lastName: "McLelland"
+}
+
+const sweep = person => `${person.firstName} ${person.lastName} sweeps`
+const doDishes = person => `${person.firstName} ${person.lastName} does dishes`
+const groceryShopping = person => `${person.firstName} ${person.lastName} goes grocery shopping`
+const washDog = person => `${person.firstName} ${person.lastName} washes the dog`
+const laundry = person => `${person.firstName} ${person.lastName} does laundry`
+const clean = person => `${person.firstName} ${person.lastName} cleans`
+
+const dayPlanner = (chore1, chore2, chore3, person, day) => {
+    return `On ${day}, ${chore1(person)}, and 
+    ${chore2(person)}, and
+    ${chore3(person)}`
+}
+
+console.log(dayPlanner(sweep, washDog, laundry, don, "Thursday"))
